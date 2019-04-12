@@ -2,24 +2,22 @@
 
 int main(){
 
-    int quantidade_de_dominos, i, menor = 1, cont = 0;
+    int quantidade_de_dominos, i, cont = 0;
     scanf("%d", &quantidade_de_dominos);
 
     int v[quantidade_de_dominos];
     for(i = 0; i < quantidade_de_dominos; i++)
         scanf("%d", &v[i]);
     
-    menor = v[1];
-    for(i = 0; i < quantidade_de_dominos; i++){
-        if(v[i] <= menor){
-            menor = v[i+2];
+    
+    for(i = 0; i < quantidade_de_dominos-1; i++){
+        if(v[i] <= v[i+1])
             cont++;
-        }else{
-            menor = menor;
-        }
+        else
+            cont = cont;
     }
     
-    if(cont == quantidade_de_dominos)
+    if(cont == quantidade_de_dominos - 1)
         printf("ok\n");
     else 
         printf("precisa de ajuste\n");
