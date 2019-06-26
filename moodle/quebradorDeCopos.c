@@ -1,21 +1,31 @@
 #include <stdio.h>
 
 int main(){
-
-	int n, x, y;
+	
+	int n, i, j, z, x;
 	scanf("%d", &n);
 	
-	for(x = 0; x < n; x++){
-		printf("\n");
-		for(y = 0; y < x; y++){
-			printf(".");
-			for(int z =0; z < y; z++){
-				printf("%d", n);
-			}
-			
-		
-		}
+	x = n; 
 	
+	for(i = 1; i <= n; i++){
+		for(j = 1; j <= n*2; j++){
+			
+			 if(j == x){
+				for(z = 1; z <= i; z++){
+					printf("%d",n);
+					j++;
+					if(j <= n*2-1){
+						printf(".");
+						j++;
+					}
+				}
+			}else
+				printf(".");
+			
+		}
+		printf("\n");
+		x--;
+		
 	}
 	return 0;
 }
